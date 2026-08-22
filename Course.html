@@ -1,0 +1,3580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TNPSC CTSE Paper-II | Study Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --primary-light: #eef2ff;
+
+            --text: #172033;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+
+            --bg: #f6f8fc;
+            --card: #ffffff;
+            --border: #e5eaf2;
+
+            --green: #16a34a;
+            --green-bg: #ecfdf3;
+
+            --orange: #ea580c;
+            --orange-bg: #fff7ed;
+
+            --blue: #2563eb;
+            --blue-bg: #eff6ff;
+
+            --purple: #7c3aed;
+            --purple-bg: #f5f3ff;
+
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, .04);
+            --shadow-md: 0 10px 30px rgba(15, 23, 42, .07);
+
+            --radius: 16px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 72px;
+
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topbar-inner {
+            max-width: 1450px;
+            height: 100%;
+            margin: auto;
+
+            padding: 0 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            color: white;
+
+            font-size: 20px;
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #4338ca
+                );
+
+            box-shadow:
+                0 8px 18px rgba(79,70,229,.25);
+        }
+
+        .brand-text h1 {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        .brand-text span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .exam-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            background: var(--primary-light);
+            color: var(--primary-dark);
+
+            border-radius: 999px;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           LAYOUT
+        ========================= */
+
+        .page {
+            max-width: 1450px;
+            margin: auto;
+
+            padding: 28px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 28px;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: sticky;
+            top: 96px;
+
+            height: calc(100vh - 120px);
+
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            padding: 18px;
+
+            box-shadow: var(--shadow-sm);
+
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 12px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: .08em;
+
+            color: var(--text-muted);
+
+            margin-bottom: 12px;
+        }
+
+        .unit-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .unit-link {
+            border: 0;
+            background: transparent;
+
+            padding: 10px 12px;
+
+            border-radius: 10px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .2s;
+        }
+
+        .unit-link:hover {
+            background: #f8fafc;
+            color: var(--text);
+        }
+
+        .unit-link.active {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .unit-link span {
+            display: block;
+
+            font-size: 10px;
+            color: var(--text-muted);
+
+            margin-top: 1px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .main {
+            min-width: 0;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827 0%,
+                    #1e1b4b 55%,
+                    #312e81 100%
+                );
+
+            color: white;
+
+            border-radius: 22px;
+
+            padding: 34px;
+
+            margin-bottom: 22px;
+
+            box-shadow:
+                0 18px 45px rgba(30, 27, 75, .18);
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            right: -100px;
+            top: -150px;
+
+            background: rgba(129,140,248,.2);
+
+            border-radius: 50%;
+
+            filter: blur(4px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 6px 10px;
+
+            background: rgba(255,255,255,.1);
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            border-radius: 999px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 14px;
+        }
+
+        .hero h2 {
+            font-size: clamp(26px, 4vw, 40px);
+            line-height: 1.15;
+
+            max-width: 760px;
+
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            max-width: 720px;
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+        }
+
+        .hero-stats {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 26px;
+        }
+
+        .hero-stat {
+            padding: 15px;
+
+            background: rgba(255,255,255,.08);
+
+            border:
+                1px solid rgba(255,255,255,.1);
+
+            border-radius: 13px;
+        }
+
+        .hero-stat strong {
+            display: block;
+
+            font-size: 22px;
+        }
+
+        .hero-stat span {
+            color: #cbd5e1;
+            font-size: 11px;
+        }
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .toolbar {
+            display: flex;
+            gap: 12px;
+
+            margin-bottom: 22px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-box span {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: var(--text-muted);
+        }
+
+        .search-box input {
+            width: 100%;
+
+            height: 48px;
+
+            padding:
+                0 16px 0 44px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            outline: none;
+
+            color: var(--text);
+
+            box-shadow: var(--shadow-sm);
+
+            transition: .2s;
+        }
+
+        .search-box input:focus {
+            border-color: #818cf8;
+
+            box-shadow:
+                0 0 0 4px rgba(99,102,241,.1);
+        }
+
+        .filter-btn {
+            height: 48px;
+
+            padding: 0 18px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            color: var(--text-secondary);
+        }
+
+        /* =========================
+           STRATEGY
+        ========================= */
+
+        .strategy {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 16px;
+
+            margin-bottom: 28px;
+        }
+
+        .strategy-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            padding: 22px;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .strategy-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 15px;
+        }
+
+        .strategy-icon {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 11px;
+
+            font-size: 18px;
+        }
+
+        .high .strategy-icon {
+            background: var(--green-bg);
+        }
+
+        .medium .strategy-icon {
+            background: var(--orange-bg);
+        }
+
+        .strategy h3 {
+            font-size: 16px;
+        }
+
+        .strategy ul {
+            padding-left: 18px;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+        }
+
+        .strategy li {
+            margin-bottom: 7px;
+        }
+
+        /* =========================
+           UNIT
+        ========================= */
+
+        .unit {
+            margin-bottom: 32px;
+
+            scroll-margin-top: 95px;
+        }
+
+        .unit-header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 12px;
+        }
+
+        .unit-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .unit-number {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: var(--primary-light);
+
+            color: var(--primary-dark);
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .unit-title h2 {
+            font-size: 19px;
+        }
+
+        .question-count {
+            color: var(--text-muted);
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           Q&A CARD
+        ========================= */
+
+        .qa-list {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .qa {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            overflow: hidden;
+
+            transition:
+                box-shadow .2s,
+                border-color .2s;
+        }
+
+        .qa:hover {
+            border-color: #d6dbea;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .question {
+            width: 100%;
+
+            border: 0;
+            background: transparent;
+
+            padding: 17px 18px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            color: var(--text);
+        }
+
+        .q-number {
+            flex-shrink: 0;
+
+            width: 30px;
+            height: 30px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 8px;
+
+            background: #f1f5f9;
+
+            color: var(--text-secondary);
+
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .q-text {
+            flex: 1;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            line-height: 1.45;
+        }
+
+        .chevron {
+            width: 26px;
+            height: 26px;
+
+            display: grid;
+            place-items: center;
+
+            color: var(--text-muted);
+
+            transition: transform .2s;
+        }
+
+        .qa.open .chevron {
+            transform: rotate(180deg);
+        }
+
+        .answer {
+            display: none;
+
+            padding:
+                0 18px 18px 62px;
+        }
+
+        .qa.open .answer {
+            display: block;
+        }
+
+        .answer-inner {
+            padding: 14px 16px;
+
+            background: #f8fafc;
+
+            border-left:
+                3px solid var(--primary);
+
+            border-radius:
+                0 10px 10px 0;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+        }
+
+        .answer-label {
+            display: block;
+
+            color: var(--primary-dark);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+
+            margin-bottom: 4px;
+        }
+
+        code {
+            padding: 2px 6px;
+
+            border-radius: 5px;
+
+            background: #e2e8f0;
+
+            color: #334155;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           CHECKLIST
+        ========================= */
+
+        .revision {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 24px;
+
+            margin-top: 35px;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .revision-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 18px;
+        }
+
+        .revision h2 {
+            font-size: 20px;
+        }
+
+        .progress-text {
+            color: var(--primary);
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 7px;
+
+            background: #e2e8f0;
+
+            border-radius: 999px;
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            width: 0%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            border-radius: inherit;
+
+            transition: width .3s;
+        }
+
+        .checklist {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 9px;
+        }
+
+        .check-item {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            padding: 11px 12px;
+
+            border: 1px solid #edf0f5;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            color: var(--text-secondary);
+
+            transition: .2s;
+        }
+
+        .check-item:hover {
+            background: #f8fafc;
+        }
+
+        .check-item input {
+            margin-top: 4px;
+
+            accent-color: var(--primary);
+        }
+
+        .check-item.checked {
+            background: var(--green-bg);
+
+            border-color: #bbf7d0;
+
+            color: #166534;
+
+            text-decoration: line-through;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 35px 0 10px;
+
+            color: var(--text-muted);
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           NO RESULTS
+        ========================= */
+
+        .no-results {
+            display: none;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            color: var(--text-muted);
+        }
+
+        .no-results strong {
+            display: block;
+
+            color: var(--text);
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 1050px) {
+
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+
+                top: 0;
+
+                height: auto;
+
+                overflow: visible;
+            }
+
+            .unit-nav {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hero-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 15px;
+            }
+
+            .topbar-inner {
+                padding: 0 15px;
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .exam-badge {
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 24px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            .hero-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .strategy {
+                grid-template-columns: 1fr;
+            }
+
+            .toolbar {
+                flex-direction: column;
+            }
+
+            .unit-nav {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .unit-title h2 {
+                font-size: 16px;
+            }
+
+            .question {
+                padding: 14px;
+            }
+
+            .answer {
+                padding:
+                    0 14px 14px 14px;
+            }
+
+            .answer-inner {
+                border-left: 0;
+
+                border-top:
+                    3px solid var(--primary);
+            }
+
+            .checklist {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="topbar">
+
+    <div class="topbar-inner">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                T
+            </div>
+
+            <div class="brand-text">
+                <h1>TNPSC Study Hub</h1>
+                <span>CTSE Paper-II • Subject Code 554</span>
+            </div>
+
+        </div>
+
+        <div class="exam-badge">
+            📅 12 Sept 2026
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="page">
+
+    <div class="layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+                Course Units
+            </div>
+
+            <div class="unit-nav">
+
+                <button class="unit-link active" data-target="unit1">
+                    Unit I
+                    <span>Programming</span>
+                </button>
+
+                <button class="unit-link" data-target="unit2">
+                    Unit II
+                    <span>Data Structures</span>
+                </button>
+
+                <button class="unit-link" data-target="unit3">
+                    Unit III
+                    <span>Digital Logic</span>
+                </button>
+
+                <button class="unit-link" data-target="unit4">
+                    Unit IV
+                    <span>DBMS</span>
+                </button>
+
+                <button class="unit-link" data-target="unit5">
+                    Unit V
+                    <span>Operating Systems</span>
+                </button>
+
+                <button class="unit-link" data-target="unit6">
+                    Unit VI
+                    <span>Software Engineering</span>
+                </button>
+
+                <button class="unit-link" data-target="unit7">
+                    Unit VII
+                    <span>Web Technology</span>
+                </button>
+
+                <button class="unit-link" data-target="unit8">
+                    Unit VIII
+                    <span>Networks & Security</span>
+                </button>
+
+                <button class="unit-link" data-target="unit9">
+                    Unit IX
+                    <span>Microprocessor</span>
+                </button>
+
+                <button class="unit-link" data-target="unit10">
+                    Unit X
+                    <span>Electrical & Electronics</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN
+        ========================= -->
+
+        <main class="main">
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        🎯 Exam Preparation Dashboard
+                    </div>
+
+                    <h2>
+                        TNPSC CTSE Paper-II
+                        <br>
+                        Smart Revision Hub
+                    </h2>
+
+                    <p>
+                        A focused FAQ-style revision guide covering
+                        10 technical units, 100 important questions,
+                        and quick-recall concepts.
+                    </p>
+
+                    <div class="hero-stats">
+
+                        <div class="hero-stat">
+                            <strong>10</strong>
+                            <span>Technical Units</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>100</strong>
+                            <span>FAQ Questions</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>200</strong>
+                            <span>Total Exam Questions</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>20</strong>
+                            <span>Questions / Unit</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SEARCH -->
+
+            <div class="toolbar">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search questions, answers or topics..."
+                    >
+
+                </div>
+
+                <button
+                    class="filter-btn"
+                    id="expandBtn"
+                >
+                    Expand All
+                </button>
+
+            </div>
+
+
+            <!-- STRATEGY -->
+
+            <section class="strategy">
+
+                <div class="strategy-card high">
+
+                    <div class="strategy-header">
+
+                        <div class="strategy-icon">
+                            🚀
+                        </div>
+
+                        <div>
+                            <h3>High ROI Units</h3>
+                        </div>
+
+                    </div>
+
+                    <ul>
+                        <li>Unit III — Digital Logic</li>
+                        <li>Unit IV — DBMS</li>
+                        <li>Unit VIII — Networks & Security</li>
+                        <li>Unit X — Electrical / Electronics</li>
+                        <li>Unit VI — Software Engineering</li>
+                        <li>Unit V — Operating Systems</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="strategy-card medium">
+
+                    <div class="strategy-header">
+
+                        <div class="strategy-icon">
+                            📚
+                        </div>
+
+                        <div>
+                            <h3>Medium ROI Units</h3>
+                        </div>
+
+                    </div>
+
+                    <ul>
+                        <li>Unit I — C / Python / OOP</li>
+                        <li>Unit II — Data Structures & Algorithms</li>
+                        <li>Unit VII — Web Technology</li>
+                        <li>Unit IX — Microprocessor</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT I
+            ========================= -->
+
+            <section class="unit" id="unit1">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">I</div>
+
+                        <h2>
+                            Programming
+                            <small>(C, Python, OOP)</small>
+                        </h2>
+                    </div>
+
+                    <span class="question-count">
+                        10 Questions
+                    </span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                What is the time complexity of accessing an element in an array vs a linked list?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Array — <b>O(1)</b>;
+                                Linked list — <b>O(n)</b>.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">
+                                Difference between pass by value and pass by reference in C?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Pass by value copies the actual value, so changes don't affect the original.
+                                Pass by reference passes the memory address, so changes affect the original variable.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">
+                                What does malloc() return if memory allocation fails?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <code>NULL</code>.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">
+                                In Python, which data types are mutable vs immutable?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Mutable — list, dict, set.
+                                Immutable — tuple, string, int, float.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">
+                                What is a constructor in OOP, and can it return a value?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A special member function invoked automatically when an object is created.
+                                It cannot return a value, not even void.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">
+                                Difference between function overloading and function overriding?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Overloading — same function name with different parameters within the same class
+                                (compile-time polymorphism).
+                                Overriding — subclass redefines a base class method with the same signature
+                                (run-time polymorphism).
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">
+                                What is the difference between a class and an object?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A class is a blueprint/template;
+                                an object is an instance of the class.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">
+                                What is the purpose of the this pointer in C++?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                It points to the current object invoking the member function.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">
+                                What is a pure virtual function?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A virtual function with no body, declared using
+                                <code>= 0</code>, making the class abstract.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">
+                                What is the difference between a Stack and a Queue in terms of ordering?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Stack — <b>LIFO</b> (Last In First Out).
+                                Queue — <b>FIFO</b> (First In First Out).
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT II
+            ========================= -->
+
+            <section class="unit" id="unit2">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">II</div>
+
+                        <h2>
+                            Data Structures & Algorithms
+                        </h2>
+                    </div>
+
+                    <span class="question-count">
+                        10 Questions
+                    </span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                Time complexity of Binary Search?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <b>O(log n)</b>. Binary search requires a sorted array.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">
+                                Which sorting algorithm has the best average/worst case time complexity among comparison sorts?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Merge Sort and Heap Sort — <b>O(n log n)</b> in worst case.
+                                Quick Sort — <b>O(n log n)</b> average but <b>O(n²)</b> worst case.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">
+                                Which sorting algorithm is stable: Bubble Sort or Quick Sort?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Bubble Sort is stable; Quick Sort is generally not stable.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">
+                                What is the time complexity of inserting an element into a Binary Search Tree?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <b>O(log n)</b> average;
+                                <b>O(n)</b> worst case for a skewed tree.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">
+                                What is a self-balancing BST? Name two examples.
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A BST that automatically maintains O(log n) height.
+                                Examples: AVL Tree and Red-Black Tree.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">
+                                What is the space complexity of an adjacency matrix representation?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <b>O(n²)</b>.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">
+                                Which algorithm is used for shortest paths with negative edge weights?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Bellman-Ford Algorithm.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">
+                                Which algorithm finds all-pairs shortest paths?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Floyd-Warshall Algorithm.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">
+                                What is the difference between Greedy and Dynamic Programming?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Greedy makes a locally optimal choice at each step without reconsidering.
+                                Dynamic Programming solves overlapping subproblems and combines optimal solutions.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">
+                                What is amortized analysis used for?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To analyze the average time per operation over a sequence of operations,
+                                even when individual operations vary in cost.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT III
+            ========================= -->
+
+            <section class="unit" id="unit3">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">III</div>
+
+                        <h2>
+                            Digital Logic & Computer Architecture
+                        </h2>
+                    </div>
+
+                    <span class="question-count">
+                        10 Questions
+                    </span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                Convert (101101)₂ to decimal.
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <b>45</b>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">
+                                What is the minimum number of NAND gates needed to implement any Boolean function?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                NAND is a universal gate — any Boolean function can be implemented using NAND gates.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">
+                                Difference between combinational and sequential circuits?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Combinational output depends only on current inputs.
+                                Sequential output depends on current inputs and past state and has memory.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">
+                                What is the key difference between RISC and CISC architecture?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                RISC uses simple, fixed-length instructions with fewer addressing modes.
+                                CISC uses complex, variable-length instructions with more addressing modes.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">
+                                What is the purpose of DMA?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                DMA allows peripherals to transfer data directly to/from memory without CPU intervention.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">
+                                What is a cache hit vs cache miss?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Cache hit — requested data is found in cache.
+                                Cache miss — data is not found and must be fetched from main memory.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">
+                                What are the three types of hazards in pipelining?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Structural, Data, and Control hazards.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">
+                                What is virtual memory?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A memory management technique that gives applications the illusion of a large,
+                                contiguous memory space using disk storage through paging/segmentation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">
+                                Difference between SRAM and DRAM?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                SRAM is faster, uses flip-flops and requires no refresh.
+                                DRAM uses capacitors and requires periodic refresh.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">
+                                What is 2's complement of (1010)₂?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <b>0110</b>.
+                                Invert bits → 0101, then add 1 → 0110.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT IV
+            ========================= -->
+
+            <section class="unit" id="unit4">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">IV</div>
+
+                        <h2>Database Management Systems</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                What is the main goal of normalization?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To reduce data redundancy and avoid update, insert and delete anomalies.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">
+                                What condition must be satisfied for a relation to be in 2NF?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                It must be in 1NF and every non-key attribute must be fully functionally
+                                dependent on the entire primary key.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">
+                                What is BCNF?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A stricter version of 3NF where for every functional dependency X → Y,
+                                X must be a super key.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">
+                                Name Codd's rule that states data should be represented only as values in tables.
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Rule 1 — The Information Rule.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">
+                                Difference between DDL, DML, DCL and TCL commands?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                DDL — CREATE, ALTER, DROP.
+                                DML — SELECT, INSERT, UPDATE, DELETE.
+                                DCL — GRANT, REVOKE.
+                                TCL — COMMIT, ROLLBACK.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">
+                                What are the ACID properties of a transaction?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Atomicity, Consistency, Isolation, Durability.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">
+                                What is a deadlock in DBMS?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A situation where two or more transactions wait indefinitely for resources
+                                locked by each other.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">
+                                Difference between primary key and candidate key?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Candidate key is any minimal set of attributes that uniquely identifies a tuple.
+                                Primary key is the candidate key chosen as the main identifier.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">
+                                What is the purpose of a B+ tree in database indexing?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To provide efficient ordered access to records with O(log n) search,
+                                insertion and deletion. Leaves are linked for range queries.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">
+                                What does RAID stand for, and what is RAID 0 vs RAID 1?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                RAID — Redundant Array of Independent Disks.
+                                RAID 0 — striping, speed but no redundancy.
+                                RAID 1 — mirroring for redundancy.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT V
+            ========================= -->
+
+            <section class="unit" id="unit5">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">V</div>
+
+                        <h2>Operating Systems & Cloud Technologies</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                What is the difference between a process and a thread?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A process is an independent program in execution with its own memory space.
+                                A thread is a lightweight unit of execution within a process sharing its memory.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">
+                                Name the four necessary conditions for deadlock.
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">
+                                Which CPU scheduling algorithm can cause starvation?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Shortest Job First (SJF) and Priority Scheduling without aging.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">
+                                What is thrashing in OS?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A condition where the system spends more time swapping pages than executing
+                                processes due to excessive page faults.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">
+                                Difference between a Semaphore and a Mutex?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Mutex allows one thread to access a resource at a time and is ownership-based.
+                                Semaphore can allow multiple threads and has no ownership concept.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">
+                                What are three page replacement algorithms?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                FIFO, LRU and Optimal Page Replacement.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">
+                                What is virtualization?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Creating a virtual rather than physical version of a resource,
+                                such as virtual machines, storage or networks.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">
+                                What is a Hypervisor? Name its two types.
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Software that creates and manages virtual machines.
+                                Type 1 runs directly on hardware.
+                                Type 2 runs on top of an operating system.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">
+                                What is MapReduce used for in Hadoop?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A programming model for processing large datasets in parallel across
+                                a distributed cluster using Map and Reduce phases.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">
+                                Name the three cloud service models.
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                IaaS, PaaS and SaaS.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT VI
+            ========================= -->
+
+            <section class="unit" id="unit6">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">VI</div>
+
+                        <h2>Software Engineering</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">What is COCOMO used for?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                COnstructive COst MOdel — estimating software development effort,
+                                cost and schedule based on lines of code.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">Difference between Verification and Validation?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Verification — “Are we building the product right?”
+                                Validation — “Are we building the right product?”
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">What is the difference between White Box and Black Box testing?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                White box tests internal logic/code structure.
+                                Black box tests functionality without knowledge of internal code.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">What is Regression Testing?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Re-testing a system after changes or bug fixes to ensure existing
+                                functionality still works correctly.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">What are the phases of the Waterfall Model?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Requirements → Design → Implementation → Testing → Deployment → Maintenance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">What is Extreme Programming (XP)?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                An Agile methodology emphasizing frequent releases, pair programming,
+                                continuous testing and close customer collaboration.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">Functional vs Non-functional requirements?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Functional — what the system should do.
+                                Non-functional — how the system performs, such as performance,
+                                security, usability and reliability.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">What does DevOps aim to achieve?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Integration and automation between development and operations
+                                for faster and more reliable software delivery through CI/CD.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">What is Earned Value Analysis used for?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To measure project performance and progress by comparing planned
+                                versus actual work completed and cost.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">What is refactoring?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Restructuring existing code without changing its external behavior
+                                to improve readability and maintainability.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT VII
+            ========================= -->
+
+            <section class="unit" id="unit7">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">VII</div>
+
+                        <h2>Web Technology</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                Difference between client-side and server-side scripting?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Client-side runs in the browser, such as JavaScript.
+                                Server-side runs on the server, such as PHP or Servlets.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">What is the purpose of JDBC?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Java Database Connectivity — an API that allows Java applications
+                                to interact with databases.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">What is the life cycle of a Servlet?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                init() → service() → destroy().
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">Difference between GET and POST HTTP methods?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                GET sends data via URL and is idempotent.
+                                POST sends data in the request body and is used for larger or sensitive data.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">What is the role of cookies in web applications?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To store small pieces of data on the client side for session tracking,
+                                personalization and state management.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">What does MVC stand for and what is its purpose?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Model-View-Controller.
+                                It separates application logic, UI and input handling for maintainability.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">What is Node.js primarily used for?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A server-side JavaScript runtime for scalable,
+                                event-driven and non-blocking network applications.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">Difference between SQL and NoSQL databases?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                SQL databases are structured and relational with fixed schemas.
+                                NoSQL databases have flexible schemas and may use documents or collections.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">What does MERN and MEAN stack stand for?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                MERN — MongoDB, Express.js, React, Node.js.
+                                MEAN — MongoDB, Express.js, Angular, Node.js.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">What is the purpose of CSS?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Cascading Style Sheets controls the presentation and styling
+                                of HTML content.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT VIII
+            ========================= -->
+
+            <section class="unit" id="unit8">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">VIII</div>
+
+                        <h2>Computer Networks & Security</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">List the 7 layers of the OSI model.</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Application, Presentation, Session, Transport, Network,
+                                Data Link, Physical.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">Which OSI layer handles routing?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Network Layer.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">Difference between TCP and UDP?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                TCP is connection-oriented, reliable and ordered.
+                                UDP is connectionless, faster and provides no delivery guarantee.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">Default port numbers for HTTP, HTTPS, FTP and DNS?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                HTTP — <b>80</b>,
+                                HTTPS — <b>443</b>,
+                                FTP — <b>21</b>,
+                                DNS — <b>53</b>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">What is the purpose of DHCP?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Dynamic Host Configuration Protocol automatically assigns IP addresses
+                                to devices on a network.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">Difference between symmetric and asymmetric cryptography?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Symmetric uses the same key for encryption and decryption.
+                                Asymmetric uses different public and private keys.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">What are the standard AES key sizes?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                128, 192 and 256 bits.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">What is a Digital Signature used for?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To verify authenticity and integrity of a message/document
+                                and provide non-repudiation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">Difference between SSL and SET?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                SSL secures general data transmission over networks.
+                                SET was specifically designed to secure online credit card transactions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">What is the purpose of ARP?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                ARP maps an IP address to a physical MAC address on a local network.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT IX
+            ========================= -->
+
+            <section class="unit" id="unit9">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">IX</div>
+
+                        <h2>Microprocessor & Embedded Systems</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">
+                                What is the data bus width of 8085, 8086 and 8051?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                8085 — 8-bit.
+                                8086 — 16-bit.
+                                8051 — 8-bit.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">
+                                How many address lines does the 8085 have?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                16 address lines, capable of addressing <b>64 KB</b> of memory.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">
+                                What is the size difference between 8085 and 8086?
+                            </span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                8085 has an 8-bit data bus.
+                                8086 has a 16-bit data bus and more registers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">What are SFRs used for in 8051?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                To control and monitor internal peripherals such as timers,
+                                ports and serial communication.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">Difference between microprocessor and microcontroller?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A microprocessor mainly contains a CPU and requires external RAM,
+                                ROM and I/O.
+                                A microcontroller integrates CPU, RAM, ROM and I/O on one chip.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">What is pipelining in ARM processors?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Overlapping execution of multiple instruction stages such as
+                                fetch, decode and execute to improve throughput.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">What are common 8085 addressing modes?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Immediate, Direct, Register, Register Indirect and Implied.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">What is context switching?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Saving the state of the currently running task and loading
+                                the state of another task to enable multitasking.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">What is the role of an emulator in embedded development?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                It simulates the target hardware environment for testing and
+                                debugging embedded software without physical hardware.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">What does real-time constraint mean?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                A requirement that a task must complete within a specified deadline.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 UNIT X
+            ========================= -->
+
+            <section class="unit" id="unit10">
+
+                <div class="unit-header">
+
+                    <div class="unit-title">
+                        <div class="unit-number">X</div>
+
+                        <h2>Electrical, Electronics & Applications</h2>
+                    </div>
+
+                    <span class="question-count">10 Questions</span>
+
+                </div>
+
+                <div class="qa-list">
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">01</span>
+                            <span class="q-text">State Ohm's Law.</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                <b>V = IR</b> — Voltage = Current × Resistance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">02</span>
+                            <span class="q-text">State KCL and KVL.</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                KCL — sum of currents entering a node equals the sum leaving it.
+                                KVL — sum of voltages around a closed loop is zero.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">03</span>
+                            <span class="q-text">What is the relationship between Power Factor and Reactive Power?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Power Factor = Real Power / Apparent Power = cos(θ).
+                                Lower power factor means higher reactive power relative to real power.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">04</span>
+                            <span class="q-text">Difference between DC generator and DC motor?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Generator converts mechanical energy into electrical energy.
+                                Motor converts electrical energy into mechanical energy.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">05</span>
+                            <span class="q-text">What is a Zener diode primarily used for?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Voltage regulation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">06</span>
+                            <span class="q-text">Difference between BJT and MOSFET?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                BJT is current-controlled and bipolar.
+                                MOSFET is voltage-controlled, unipolar and has higher input impedance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">07</span>
+                            <span class="q-text">What is the function of an Op-Amp in inverting configuration?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                It produces an amplified and inverted version of the input signal,
+                                with a 180° phase shift.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">08</span>
+                            <span class="q-text">What is the principle behind an LVDT?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                It converts linear displacement into a proportional electrical AC
+                                voltage using mutual inductance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">09</span>
+                            <span class="q-text">Difference between a buck converter and a boost converter?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                Buck converter — steps down DC voltage.
+                                Boost converter — steps up DC voltage.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa">
+                        <button class="question">
+                            <span class="q-number">10</span>
+                            <span class="q-text">What is the function of a CT and PT?</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+
+                        <div class="answer">
+                            <div class="answer-inner">
+                                <span class="answer-label">Answer</span>
+                                CT steps down high current to a measurable low value.
+                                PT steps down high voltage to a measurable low value.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 REVISION CHECKLIST
+            ========================= -->
+
+            <section class="revision">
+
+                <div class="revision-header">
+
+                    <div>
+                        <h2>⚡ Quick Revision Checklist</h2>
+                    </div>
+
+                    <div class="progress-text">
+                        <span id="progressCount">0</span>/10 completed
+                    </div>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+                </div>
+
+
+                <div class="checklist">
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        Sorting algorithm complexity table
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        Normal forms 1NF–BCNF
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        OSI 7 layers + protocols + ports
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        2's complement / number systems
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        ACID + Coffman's deadlock conditions
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        SDLC models
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        8085 / 8086 / 8051 specifications
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        Ohm's law + KCL / KVL
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        Symmetric vs asymmetric cryptography
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox">
+                        IaaS / PaaS / SaaS + virtualization
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <footer>
+                TNPSC CTSE Paper-II • Subject Code 554 •
+                Focused revision dashboard
+            </footer>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* =========================
+       Q&A ACCORDION
+    ========================= */
+
+    const questions =
+        document.querySelectorAll(".question");
+
+    questions.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const qa =
+                button.closest(".qa");
+
+            qa.classList.toggle("open");
+
+        });
+
+    });
+
+
+    /* =========================
+       EXPAND / COLLAPSE ALL
+    ========================= */
+
+    const expandBtn =
+        document.getElementById("expandBtn");
+
+    let expanded = false;
+
+    expandBtn.addEventListener("click", () => {
+
+        expanded = !expanded;
+
+        document
+            .querySelectorAll(".qa")
+            .forEach(qa => {
+
+                qa.classList.toggle(
+                    "open",
+                    expanded
+                );
+
+            });
+
+        expandBtn.textContent =
+            expanded
+                ? "Collapse All"
+                : "Expand All";
+
+    });
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            const search =
+                this.value
+                    .toLowerCase()
+                    .trim();
+
+            document
+                .querySelectorAll(".unit")
+                .forEach(unit => {
+
+                    let visible = 0;
+
+                    unit
+                        .querySelectorAll(".qa")
+                        .forEach(qa => {
+
+                            const text =
+                                qa.textContent
+                                    .toLowerCase();
+
+                            const match =
+                                text.includes(search);
+
+                            qa.style.display =
+                                match
+                                    ? ""
+                                    : "none";
+
+                            if (match) {
+                                visible++;
+                            }
+
+                        });
+
+                    unit.style.display =
+                        visible > 0
+                            ? ""
+                            : "none";
+
+                });
+
+        }
+    );
+
+
+    /* =========================
+       SIDEBAR NAVIGATION
+    ========================= */
+
+    document
+        .querySelectorAll(".unit-link")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    const target =
+                        document.getElementById(
+                            link.dataset.target
+                        );
+
+                    if (!target) return;
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                    document
+                        .querySelectorAll(".unit-link")
+                        .forEach(item =>
+                            item.classList.remove("active")
+                        );
+
+                    link.classList.add("active");
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       ACTIVE UNIT ON SCROLL
+    ========================= */
+
+    const units =
+        document.querySelectorAll(".unit");
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (!entry.isIntersecting)
+                        return;
+
+                    const id =
+                        entry.target.id;
+
+                    document
+                        .querySelectorAll(".unit-link")
+                        .forEach(link => {
+
+                            link.classList.toggle(
+                                "active",
+                                link.dataset.target === id
+                            );
+
+                        });
+
+                });
+
+            },
+            {
+                rootMargin:
+                    "-25% 0px -65% 0px"
+            }
+        );
+
+    units.forEach(unit =>
+        observer.observe(unit)
+    );
+
+
+    /* =========================
+       REVISION CHECKLIST
+    ========================= */
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".check-item input"
+        );
+
+    const progressCount =
+        document.getElementById(
+            "progressCount"
+        );
+
+    const progressFill =
+        document.getElementById(
+            "progressFill"
+        );
+
+
+    function updateProgress() {
+
+        const checked =
+            document.querySelectorAll(
+                ".check-item input:checked"
+            ).length;
+
+        const total =
+            checkboxes.length;
+
+        const percentage =
+            (checked / total) * 100;
+
+        progressCount.textContent =
+            checked;
+
+        progressFill.style.width =
+            percentage + "%";
+
+        checkboxes.forEach(input => {
+
+            input
+                .closest(".check-item")
+                .classList.toggle(
+                    "checked",
+                    input.checked
+                );
+
+        });
+
+    }
+
+
+    checkboxes.forEach(input => {
+
+        input.addEventListener(
+            "change",
+            updateProgress
+        );
+
+    });
+
+
+    /* =========================
+       KEYBOARD SEARCH
+       Press "/" to search
+    ========================= */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "/" &&
+                document.activeElement.tagName !== "INPUT"
+            ) {
+
+                event.preventDefault();
+
+                searchInput.focus();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
