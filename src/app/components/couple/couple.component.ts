@@ -13,8 +13,23 @@ import { content } from '../../data/content';
 
       <div class="cards">
         <div class="card">
-          <div class="portrait" aria-hidden="true">
-            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="39" fill="none" stroke="currentColor" stroke-width="1"/><path d="M40 24c6 0 10 5 10 11s-4 10-10 10-10-4-10-10 4-11 10-11zM22 62c3-11 10-16 18-16s15 5 18 16" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+          <div class="medallion" aria-hidden="true">
+            <svg class="frame" viewBox="0 0 100 100">
+              <circle class="ring-outer" cx="50" cy="50" r="47"/>
+              <g class="finial" style="transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+              <g class="finial" style="transform:rotate(90deg); transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+              <g class="finial" style="transform:rotate(180deg); transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+              <g class="finial" style="transform:rotate(270deg); transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+            </svg>
+            <img class="portrait" src="assets/images/bride.png" alt="" />
           </div>
           <p class="label">{{ lang.text(content.brideLabel) }}</p>
           <h3 class="name">{{ lang.text(content.brideFull) }}</h3>
@@ -22,12 +37,30 @@ import { content } from '../../data/content';
         </div>
 
         <div class="joiner" aria-hidden="true">
-          <svg width="30" height="30" viewBox="0 0 30 30"><path d="M15 2v26M2 15h26" stroke="var(--gold)" stroke-width="1"/><circle cx="15" cy="15" r="12" fill="none" stroke="var(--gold)" stroke-width="1"/></svg>
+          <svg width="44" height="26" viewBox="0 0 44 26">
+            <circle cx="16" cy="13" r="10" fill="none" stroke="var(--gold)" stroke-width="1.6"/>
+            <circle cx="28" cy="13" r="10" fill="none" stroke="var(--gold)" stroke-width="1.6"/>
+          </svg>
         </div>
 
         <div class="card">
-          <div class="portrait" aria-hidden="true">
-            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="39" fill="none" stroke="currentColor" stroke-width="1"/><path d="M40 22c6 0 10 5 10 11s-4 10-10 10-10-4-10-10 4-11 10-11zM21 63c3-12 10-17 19-17s16 5 19 17" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+          <div class="medallion" aria-hidden="true">
+            <svg class="frame" viewBox="0 0 100 100">
+              <circle class="ring-outer" cx="50" cy="50" r="47"/>
+              <g class="finial" style="transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+              <g class="finial" style="transform:rotate(90deg); transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+              <g class="finial" style="transform:rotate(180deg); transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+              <g class="finial" style="transform:rotate(270deg); transform-origin:50px 50px">
+                <path d="M50 2c3 4 3 8 0 11-3-3-3-7 0-11z"/>
+              </g>
+            </svg>
+            <img class="portrait" src="assets/images/groom.png" alt="" />
           </div>
           <p class="label">{{ lang.text(content.groomLabel) }}</p>
           <h3 class="name">{{ lang.text(content.groomFull) }}</h3>
@@ -57,6 +90,7 @@ import { content } from '../../data/content';
       padding: var(--space-4) var(--space-3);
       text-align: center;
       position: relative;
+      height: 450px;
     }
     .card::before, .card::after {
       content: '';
@@ -67,12 +101,44 @@ import { content } from '../../data/content';
     .card::before { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
     .card::after { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
 
-    .portrait {
-      width: 68px;
-      height: 68px;
-      margin: 0 auto var(--space-2);
-      color: var(--maroon);
+    .medallion {
+      position: relative;
+      width: 176px;
+      height: 176px;
+      margin: 0 auto var(--space-3);
     }
+    .frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .ring-outer {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1;
+    }
+    .finial path { fill: var(--gold); }
+
+    .portrait {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 82%;
+      height: 82%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      box-shadow:
+        0 0 0 4px var(--sandal-light),
+        0 0 0 6px var(--gold),
+        0 16px 28px rgba(76, 20, 36, 0.32);
+      transition: transform 0.4s ease;
+    }
+    .card:hover .portrait { transform: translate(-50%, -50%) scale(1.035); }
+
     .label {
       font-size: 0.85rem;
       letter-spacing: 0.08em;
@@ -95,9 +161,7 @@ import { content } from '../../data/content';
     }
     .joiner { color: var(--gold); flex: 0 0 auto; }
     @media (max-width: 640px) {
-      .joiner { display: none; 
-      
-       }
+      .joiner {display: none;}
     }
   `],
 })

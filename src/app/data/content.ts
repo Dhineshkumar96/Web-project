@@ -11,7 +11,7 @@ export const content = {
   brideFull: { en: 'R. Deepikha, B.Com., CS (WNS)', ta: 'R. தீபிகா, B.Com., CS (WNS)' } as Bilingual,
   groomFull: { en: 'E. Sri Balaji, B.Tech., EEE (NPCI)', ta: 'E. ஸ்ரீ பாலாஜி, B.Tech., EEE (NPCI)' } as Bilingual,
 
-  brideParents: { en: 'Daughter of (Late) B. Ramesh Kumar & (Late) R. Sarala', ta: 'மறைந்த B. இரமேஷ்குமார் – மறைந்த R. சரளா அவர்களின் அருமை மகள்' } as Bilingual,
+  brideParents: { en: 'Daughter of B.Ramesh Kumar & R.Sarala', ta: 'மறைந்த B. இரமேஷ்குமார் – மறைந்த R. சரளா அவர்களின் அருமை மகள்' } as Bilingual,
   groomParents: { en: 'Son of P. Elango & E. Usha', ta: 'P. இளங்கோ – E. உஷா அவர்களின் அருமை மகன்' } as Bilingual,
 
   eyebrow: { en: 'Together with our families', ta: 'குடும்பத்தினருடன் இணைந்து' } as Bilingual,
