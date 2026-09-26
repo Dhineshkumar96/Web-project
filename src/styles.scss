@@ -1,0 +1,143 @@
+@use 'sass:color';
+
+:root {
+  --maroon-deep: #4C1424;
+  --maroon: #7A2438;
+  --maroon-soft: #9A3B52;
+  --gold: #C9A15A;
+  --gold-light: #E7CE98;
+  --gold-pale: #F3E4BE;
+  --sandal: #EDE0C8;
+  --sandal-light: #F7EFDD;
+  --cream: #FBF6EC;
+  --ink: #34201A;
+  --ink-soft: #6E5044;
+
+  --font-display-en: 'Marcellus', serif;
+  --font-body-en: 'Cormorant Garamond', serif;
+  --font-ta: 'Mukta Malar', sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+
+  --radius: 2px;
+  --container: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body-en);
+  font-size: 19px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html[lang='ta'] body {
+  font-family: var(--font-ta);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+h1, h2, h3 { margin: 0; }
+
+p { margin: 0; }
+
+a { color: inherit; }
+
+button {
+  font-family: inherit;
+  cursor: none;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--maroon-deep);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom cursor is only enabled on fine-pointer (non-touch) devices */
+@media (hover: hover) and (pointer: fine) {
+  html, body, * { cursor: none !important; }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.eyebrow {
+  font-family: var(--font-body-en);
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--maroon-soft);
+}
+
+html[lang='ta'] .eyebrow {
+  font-family: var(--font-ta);
+  font-style: normal;
+}
+
+.divider {
+  width: 64px;
+  height: 2px;
+  margin: var(--space-2) auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.section {
+  position: relative;
+  padding: var(--space-5) 0;
+}
+
+.section-title {
+  font-family: var(--font-display-en);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--maroon-deep);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+html[lang='ta'] .section-title {
+  font-family: var(--font-ta);
+  font-weight: 700;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ringOut {
+  0% { transform: scale(0.4); opacity: 0.55; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes petalFall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(340deg); opacity: 0; }
+}
